@@ -1,0 +1,6 @@
+{
+    "env":{
+        "MONGO_ATLAS_PASSWORD":"kindergarden2019",
+        "JWT_KEY": "Secret"
+    }
+}
