@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 
 const sampleRoute = require('./api/routes/sample')
 const usersRoute = require('./api/routes/users')
+const docRoute = require('./api/routes/documents')
 
 mongoose.connect(
     `mongodb+srv://kindergarden:kindergarden2019@kindergardencluster-nb1a9.azure.mongodb.net/test?retryWrites=true&w=majority`
@@ -32,6 +33,7 @@ app.use((req, res, next) => {
 // Routes should handle requests
 app.use('/sample', sampleRoute)
 app.use('/users', usersRoute)
+app.use('/doc', docRoute)
 
 app.use((req, res, next)=>{
     const error = new Error('Not found')
