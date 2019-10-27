@@ -44,7 +44,7 @@ class RandomDie{
 }
 
 const createDocument = ({input})=>{
-    console.log('Input', input)
+    console.log('Input1', input)
     let sections = []
     for (let section of input.sections){
         let subSections = null
