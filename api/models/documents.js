@@ -11,15 +11,16 @@ const sectionScheme = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
     title: {type: String},
     text: {type: String},
-    subSections: [subSectionSchema]   
+    subSections: [{ type: Schema.Types.ObjectId, ref: 'SubSection' }]   
 })
 
 const docScheme = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
     title: {type: String, required:true},
+    text: {type: String},
     summary: {type: String},
     date: {type: Date, required: true},
-    sections: [sectionScheme],
+    sections: [{ type: Schema.Types.ObjectId, ref: 'Section' }],
 })
 
 
