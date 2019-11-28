@@ -80,12 +80,24 @@ const getDocContent = async ({docID})=>{
     
 }
 
+const getDocuments = async () => {
+    try{
+        const documents = await Document.find({})
+        
+        return documents
+    }
+    catch(e){
+        return 'Failed to Reach the endpoint!'
+    }
+}
+
 const root = {
     getDie: ({num}) => {
         return new RandomDie(num||7)
     },
     createDoc: createDocument,
-    getDocContent: getDocContent
+    getDocContent: getDocContent,
+    getDocuments: getDocuments
 };
 
 module.exports = {root}

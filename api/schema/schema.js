@@ -20,12 +20,20 @@ const schema = buildSchema(`
     type DocContent{
         id: ID
         title: String!
+        summary: String!
         sections: [DocSection!]
+    }
+
+    type Documents{
+        id: ID
+        title: String!
+        summary: String!
     }
 
     type Query{
         getDie(num: Int!):RandomDie
         getDocContent(docID: ID!): DocContent
+        getDocuments:[Documents]!
     }
 
     input subSection{
